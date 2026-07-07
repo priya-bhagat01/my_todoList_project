@@ -1,4 +1,7 @@
-const todoList = [];
+"use strict";
+
+const todoList = JSON.parse(localStorage.getItem('todoList')) || [];
+
 displayTodoList();
 
 function displayTodoList() {
@@ -17,6 +20,7 @@ function displayTodoList() {
 	      <button onclick ="
 	   	    todoList.splice(${i}, 1)
             displayTodoList();
+	   	    localStorage.setItem('todoList', JSON.stringify(todoList));
 	      ">Delete</button>
 	   </p>`;
 	   todoListHTML += html;
@@ -40,6 +44,8 @@ function addTodoList() {
 	  console.log(todoList);
 	  inputElement.value = '';
 	  dateInputElement.value = '';
+	  localStorage.setItem('todoList', JSON.stringify(todoList));
 	  };
     displayTodoList();
 }
+
