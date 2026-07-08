@@ -14,15 +14,15 @@ function displayTodoList() {
 	   formattedDate = `${parts[2]}/${parts[1]}/${parts[0]}`; //rearranges into [dd, mm, yyyy]
 	}
 	   const html = `
-	   <p>
-	      ${todo.name}
-	   	  ${formattedDate}
-	      <button onclick ="
+	   <li>
+	     <span class="todo-name">${todo.name}</span>
+	   	 <span class="todo-date">${formattedDate}</span> 
+	      <button class ="delete-button" onclick ="
 	   	    todoList.splice(${i}, 1)
             displayTodoList();
 	   	    localStorage.setItem('todoList', JSON.stringify(todoList));
 	      ">Delete</button>
-	   </p>`;
+	   </li>`;
 	   todoListHTML += html;
        }
   document.querySelector('.list')
