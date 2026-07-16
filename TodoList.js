@@ -18,7 +18,7 @@ function displayTodoList() {
 	     <span class="todo-name">${todo.name}</span>
 	   	 <span class="todo-date">${formattedDate}</span> 
 	      <button class ="delete-button">Delete</button>
-	   </li>`;
+	      </li>`;
 	   todoListHTML += html;
        }
   document.querySelector('.list')
@@ -32,7 +32,6 @@ function displayTodoList() {
 	      localStorage.setItem('todoList', JSON.stringify(todoList));
   	})	  
 });
-}
 
 function addTodoList() {
 	const inputElement = document.querySelector('.input-button');
@@ -58,4 +57,3 @@ document.querySelector('.add-button')
  .addEventListener('click', () => {
  	 addTodoList();
  });
-
