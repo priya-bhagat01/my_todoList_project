@@ -32,6 +32,7 @@ function displayTodoList() {
 	      localStorage.setItem('todoList', JSON.stringify(todoList));
   	})	  
 });
+}
 
 function addTodoList() {
 	const inputElement = document.querySelector('.input-button');
